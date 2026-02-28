@@ -44,6 +44,7 @@ class _HomeState extends State<Home> {
                         borderSide: BorderSide.none,
                       ),
                     ),
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
@@ -51,41 +52,112 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(40.0),
+      body: SingleChildScrollView(
         child: Column(
           children: [
             SingleChildScrollView(
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: Row(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20.0, bottom: 10),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.filter_list,
+                          color: Colors.lightGreenAccent,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'On-site',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Senior',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Full-Time',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Full-Time',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Full-Time',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                color: Colors.transparent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  side: BorderSide(
+                    color: const Color.fromARGB(123, 255, 255, 255),
+                  ),
+                ),
+                child: Column(
                   children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.filter_list,
-                        color: Colors.lightGreenAccent,
+                    ListTile(
+                      leading: Icon(Icons.person), //should be ima
+                      title: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          '2F capital',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      subtitle: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'Bole, Addis Abeba',
+                          style: TextStyle(
+                            color: const Color.fromARGB(118, 255, 255, 255),
+                          ),
+                        ),
                       ),
                     ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'On-site',
-                        style: TextStyle(color: Colors.white),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'Software Developer',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Senior',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Full-Time',
-                        style: TextStyle(color: Colors.white),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          '25000 - 30000 (ETB)',
+                          style: TextStyle(color: Colors.lightGreenAccent),
+                        ),
                       ),
                     ),
                   ],
@@ -93,12 +165,332 @@ class _HomeState extends State<Home> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20, left: 1),
+              padding: const EdgeInsets.all(8.0),
               child: Card(
                 color: Colors.transparent,
-                child: Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text('data', style: TextStyle(color: Colors.white)),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  side: BorderSide(
+                    color: const Color.fromARGB(123, 255, 255, 255),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Icon(Icons.person), //should be ima
+                      title: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          '2F capital',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      subtitle: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'Bole, Addis Abeba',
+                          style: TextStyle(
+                            color: const Color.fromARGB(118, 255, 255, 255),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'Software Developer',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          '25000 - 30000 (ETB)',
+                          style: TextStyle(color: Colors.lightGreenAccent),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                color: Colors.transparent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  side: BorderSide(
+                    color: const Color.fromARGB(123, 255, 255, 255),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Icon(Icons.person), //should be ima
+                      title: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          '2F capital',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      subtitle: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'Bole, Addis Abeba',
+                          style: TextStyle(
+                            color: const Color.fromARGB(118, 255, 255, 255),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'Software Developer',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          '25000 - 30000 (ETB)',
+                          style: TextStyle(color: Colors.lightGreenAccent),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                color: Colors.transparent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  side: BorderSide(
+                    color: const Color.fromARGB(123, 255, 255, 255),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Icon(Icons.person), //should be ima
+                      title: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          '2F capital',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      subtitle: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'Bole, Addis Abeba',
+                          style: TextStyle(
+                            color: const Color.fromARGB(118, 255, 255, 255),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'Software Developer',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          '25000 - 30000 (ETB)',
+                          style: TextStyle(color: Colors.lightGreenAccent),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                color: Colors.transparent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  side: BorderSide(
+                    color: const Color.fromARGB(123, 255, 255, 255),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Icon(Icons.person), //should be ima
+                      title: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          '2F capital',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      subtitle: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'Bole, Addis Abeba',
+                          style: TextStyle(
+                            color: const Color.fromARGB(118, 255, 255, 255),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'Software Developer',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          '25000 - 30000 (ETB)',
+                          style: TextStyle(color: Colors.lightGreenAccent),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                color: Colors.transparent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  side: BorderSide(
+                    color: const Color.fromARGB(123, 255, 255, 255),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Icon(Icons.person), //should be ima
+                      title: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          '2F capital',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      subtitle: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'Bole, Addis Abeba',
+                          style: TextStyle(
+                            color: const Color.fromARGB(118, 255, 255, 255),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'Software Developer',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          '25000 - 30000 (ETB)',
+                          style: TextStyle(color: Colors.lightGreenAccent),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                color: Colors.transparent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  side: BorderSide(
+                    color: const Color.fromARGB(123, 255, 255, 255),
+                  ),
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Icon(Icons.person), //should be ima
+                      title: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          '2F capital',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      subtitle: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'Bole, Addis Abeba',
+                          style: TextStyle(
+                            color: const Color.fromARGB(118, 255, 255, 255),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text(
+                          'Software Developer',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          '25000 - 30000 (ETB)',
+                          style: TextStyle(color: Colors.lightGreenAccent),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
