@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:ketari/controllers/themeController.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -25,14 +29,66 @@ class Profile extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.only(top: 20.0, left: 10, right: 10),
                 child: Material(
                   elevation: 8,
                   borderRadius: BorderRadius.circular(16),
+                  child: ListTile(
+                    tileColor: Color.fromARGB(255, 48, 47, 47),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadiusGeometry.all(
+                        Radius.circular(10),
+                      ),
+                    ),
+                    leading: CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.lightGreenAccent,
+                      child: Icon(Icons.person),
+                    ),
+                    title: Text(
+                      'Full Name',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    subtitle: Text(
+                      'Phone Number',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
                 ),
               ),
             ),
           ),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 40.0, left: 20, right: 20),
+        child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.person, color: Colors.white),
+              title: Text(
+                'Edit Profile',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.settings, color: Colors.white),
+              title: Text(
+                'Settings and Privacy',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.question_mark, color: Colors.white),
+              title: Text(
+                'Help and support',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            Divider(),
+          ],
         ),
       ),
       backgroundColor: Color.fromARGB(255, 48, 47, 47),
