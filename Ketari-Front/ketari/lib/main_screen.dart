@@ -19,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
       extendBody: true,
       body: IndexedStack(index: _selectedIndex, children: _pages),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(15),
         child: Container(
           decoration: BoxDecoration(
             color: Colors.transparent,
@@ -34,13 +34,25 @@ class _MainScreenState extends State<MainScreen> {
               unselectedItemColor: Colors.grey,
               onTap: (index) => setState(() => _selectedIndex = index),
               items: const [
-                BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.search),
-                  label: 'Search',
+                  icon: Padding(
+                    padding: EdgeInsets.only(top: 15.0),
+                    child: Icon(Icons.home),
+                  ),
+                  label: 'Home',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
+                  icon: Padding(
+                    padding: EdgeInsets.only(top: 15.0),
+                    child: Icon(Icons.chat),
+                  ),
+                  label: 'Messages',
+                ),
+                BottomNavigationBarItem(
+                  icon: Padding(
+                    padding: EdgeInsets.only(top: 15.0),
+                    child: Icon(Icons.person),
+                  ),
                   label: 'Profile',
                 ),
               ],
