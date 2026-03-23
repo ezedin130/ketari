@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(auth);
+app.use("/api/auth",auth);
 
 mongoose.connect('mongodb://localhost:27017/ketari')
 .then(()=> console.log("Database Connected"))
