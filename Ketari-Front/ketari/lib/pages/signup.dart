@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ketari/controllers/authController.dart';
+import 'package:ketari/main_screen.dart';
 import 'package:ketari/pages/login.dart';
 
 class Signup extends StatelessWidget {
@@ -9,9 +11,9 @@ class Signup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final firstnameController = TextEditingController();
+    final firstNameController = TextEditingController();
     final emailController = TextEditingController();
-    final lastnameController = TextEditingController();
+    final lastNameController = TextEditingController();
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -59,7 +61,7 @@ class Signup extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: ReusableTextField(
-                          controller: firstnameController,
+                          controller: firstNameController,
                           hint: "First Name",
                           keyboardtype: TextInputType.phone,
                         ),
@@ -69,7 +71,7 @@ class Signup extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: ReusableTextField(
-                          controller: lastnameController,
+                          controller: lastNameController,
                           hint: "Last Name",
                           keyboardtype: TextInputType.text,
                         ),
@@ -88,7 +90,20 @@ class Signup extends StatelessWidget {
                 ),
                 SizedBox(height: size.height * 0.03),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    final authController = Authcontroller();
+                    final result = await authController.registerUser(
+                      firstNameController.text,
+                      emailController.text,
+                      lastNameController.text,
+                    );
+                    ScaffoldMessenger.of(
+                      context,
+                    ).showSnackBar(SnackBar(content: Text(result.message)));
+                    if (result.success) {
+                      Get.to(MainScreen());
+                    }
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.lightGreenAccent,
                   ),
