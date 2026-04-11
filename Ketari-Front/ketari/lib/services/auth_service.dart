@@ -33,4 +33,23 @@ class AuthService {
       return AuthResponse(success: false, message: e.toString());
     }
   }
+
+  Future<AuthResponse> login({required email}) async {
+    try {
+      final response = await http.post(
+        Uri.parse("$baseUrl/api/auth/login"),
+        headers: {"Content-Type": "application/json"},
+        body: jsonEncode({"email": email}),
+      );
+      final data = jsonDecode(response.body);
+      if (response.statusCode == 200) {
+        return AuthResponse.success(data);
+      } else {
+        return AuthResponse.error(data);
+      }
+    } catch (e) {
+      print("Auth Error: $e");
+      return AuthResponse(success: false, message: e.toString());
+    }
+  }
 }
