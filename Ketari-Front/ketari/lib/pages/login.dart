@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ketari/controllers/authController.dart';
+import 'package:ketari/pages/home.dart';
 import 'package:ketari/pages/login.dart';
 import 'package:ketari/pages/signup.dart';
 
@@ -11,6 +13,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final emailController = TextEditingController();
+    final formKey = GlobalKey<FormState>();
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -61,7 +64,20 @@ class Login extends StatelessWidget {
 
                 SizedBox(height: size.height * 0.03),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    final authcontroller = Authcontroller();
+                    if (formKey.currentState!.validate()) {
+                      final result = await authcontroller.loginUser(
+                        emailController.text,
+                      );
+                      ScaffoldMessenger.of(
+                        context,
+                      ).showSnackBar(SnackBar(content: Text(result.message)));
+                      if (result.success) {
+                        Get.to(Home());
+                      }
+                    }
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.lightGreenAccent,
                   ),
