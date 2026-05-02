@@ -5,7 +5,6 @@ import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:ketari/controllers/themeController.dart';
 import 'package:ketari/main_screen.dart';
-import 'package:ketari/pages/home.dart';
 import 'package:ketari/pages/signup.dart';
 
 void main() {
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
       title: 'Ketari',
-      home: Signup(),
+      home: MainScreen(),
     );
   }
 }
