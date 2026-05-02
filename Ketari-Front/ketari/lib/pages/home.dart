@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:ketari/pages/profile.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -10,6 +13,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size.height * 0.7;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightGreenAccent,
@@ -111,386 +115,250 @@ class _HomeState extends State<Home> {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Card(
-                color: Colors.transparent,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  side: BorderSide(
-                    color: const Color.fromARGB(123, 255, 255, 255),
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: Icon(Icons.person), //should be ima
-                      title: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          '2F capital',
-                          style: TextStyle(color: Colors.white),
+              child: InkWell(
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    backgroundColor: Color.fromARGB(255, 48, 47, 47),
+                    builder: (context) {
+                      return Container(
+                        height: size,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            // crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Center(
+                                child: Container(
+                                  width: 40,
+                                  height: 5,
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                              ListTile(
+                                leading: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Icon(Icons.person),
+                                ),
+                                title: Text(
+                                  'Company Name',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                subtitle: Text(
+                                  'time',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      'Type of job',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Row(
+                                        children: [
+                                          SizedBox(width: 20),
+                                          Icon(
+                                            Icons.watch_later_outlined,
+                                            color: Colors.white,
+                                          ),
+                                          SizedBox(width: 80),
+                                          Icon(
+                                            Icons.cases_outlined,
+                                            color: Colors.white,
+                                          ),
+                                          SizedBox(width: 80),
+                                          Icon(
+                                            Icons.business_outlined,
+                                            color: Colors.white,
+                                          ),
+                                          SizedBox(width: 70),
+                                          Icon(
+                                            Icons.location_on_outlined,
+                                            color: Colors.white,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: ListTile(
+                                            title: Text(
+                                              'Deadline',
+                                              style: TextStyle(
+                                                color: Colors.lightGreen,
+                                              ),
+                                            ),
+                                            subtitle: Text(
+                                              'date',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: ListTile(
+                                            title: Text(
+                                              'Salary',
+                                              style: TextStyle(
+                                                color: Colors.lightGreen,
+                                              ),
+                                            ),
+                                            subtitle: Text(
+                                              'Amount of Money',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Divider(thickness: 0.4),
+                                    Text(
+                                      'Job Description',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text(
+                                      'ilnfcnnucffncuun',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Divider(thickness: 0.4),
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: ListTile(
+                                            leading: Icon(Icons.chair_outlined),
+                                            title: Text(
+                                              'Amount of Vacancy',
+                                              style: TextStyle(
+                                                color: Colors.lightGreen,
+                                              ),
+                                            ),
+                                            subtitle: Text(
+                                              'Number of Vacancy',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: ListTile(
+                                            leading: Icon(
+                                              Icons.school_outlined,
+                                            ),
+                                            title: Text(
+                                              'Education level',
+                                              style: TextStyle(
+                                                color: Colors.lightGreen,
+                                              ),
+                                            ),
+                                            subtitle: Text(
+                                              'Education level',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Divider(thickness: 0.4),
+                                    Text(
+                                      'Skills',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                              ElevatedButton(
+                                style: ButtonStyle(
+                                  backgroundColor: WidgetStateProperty.all(
+                                    Colors.lightGreen,
+                                  ),
+                                ),
+                                onPressed: () {},
+                                child: Text(
+                                  'Apply',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      subtitle: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          'Bole, Addis Abeba',
-                          style: TextStyle(
-                            color: const Color.fromARGB(118, 255, 255, 255),
+                      );
+                    },
+                  );
+                },
+                child: Card(
+                  color: Colors.transparent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: BorderSide(
+                      color: const Color.fromARGB(123, 255, 255, 255),
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      ListTile(
+                        leading: Icon(Icons.person), //should be ima
+                        title: Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: Text(
+                            '2F capital',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        subtitle: Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: Text(
+                            'Bole, Addis Abeba',
+                            style: TextStyle(
+                              color: const Color.fromARGB(118, 255, 255, 255),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          'Software Developer',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          '25000 - 30000 (ETB)',
-                          style: TextStyle(color: Colors.lightGreenAccent),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                color: Colors.transparent,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  side: BorderSide(
-                    color: const Color.fromARGB(123, 255, 255, 255),
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: Icon(Icons.person), //should be ima
-                      title: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          '2F capital',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                      subtitle: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          'Bole, Addis Abeba',
-                          style: TextStyle(
-                            color: const Color.fromARGB(118, 255, 255, 255),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: Text(
+                            'Software Developer',
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          'Software Developer',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          '25000 - 30000 (ETB)',
-                          style: TextStyle(color: Colors.lightGreenAccent),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                color: Colors.transparent,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  side: BorderSide(
-                    color: const Color.fromARGB(123, 255, 255, 255),
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: Icon(Icons.person), //should be ima
-                      title: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          '2F capital',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                      subtitle: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          'Bole, Addis Abeba',
-                          style: TextStyle(
-                            color: const Color.fromARGB(118, 255, 255, 255),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            '25000 - 30000 (ETB)',
+                            style: TextStyle(color: Colors.lightGreenAccent),
                           ),
                         ),
                       ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          'Software Developer',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          '25000 - 30000 (ETB)',
-                          style: TextStyle(color: Colors.lightGreenAccent),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                color: Colors.transparent,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  side: BorderSide(
-                    color: const Color.fromARGB(123, 255, 255, 255),
+                    ],
                   ),
-                ),
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: Icon(Icons.person), //should be ima
-                      title: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          '2F capital',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                      subtitle: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          'Bole, Addis Abeba',
-                          style: TextStyle(
-                            color: const Color.fromARGB(118, 255, 255, 255),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          'Software Developer',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          '25000 - 30000 (ETB)',
-                          style: TextStyle(color: Colors.lightGreenAccent),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                color: Colors.transparent,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  side: BorderSide(
-                    color: const Color.fromARGB(123, 255, 255, 255),
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: Icon(Icons.person), //should be ima
-                      title: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          '2F capital',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                      subtitle: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          'Bole, Addis Abeba',
-                          style: TextStyle(
-                            color: const Color.fromARGB(118, 255, 255, 255),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          'Software Developer',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          '25000 - 30000 (ETB)',
-                          style: TextStyle(color: Colors.lightGreenAccent),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                color: Colors.transparent,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  side: BorderSide(
-                    color: const Color.fromARGB(123, 255, 255, 255),
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: Icon(Icons.person), //should be ima
-                      title: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          '2F capital',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                      subtitle: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          'Bole, Addis Abeba',
-                          style: TextStyle(
-                            color: const Color.fromARGB(118, 255, 255, 255),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          'Software Developer',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          '25000 - 30000 (ETB)',
-                          style: TextStyle(color: Colors.lightGreenAccent),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                color: Colors.transparent,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  side: BorderSide(
-                    color: const Color.fromARGB(123, 255, 255, 255),
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: Icon(Icons.person), //should be ima
-                      title: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          '2F capital',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                      subtitle: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          'Bole, Addis Abeba',
-                          style: TextStyle(
-                            color: const Color.fromARGB(118, 255, 255, 255),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(
-                          'Software Developer',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          '25000 - 30000 (ETB)',
-                          style: TextStyle(color: Colors.lightGreenAccent),
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
               ),
             ),
