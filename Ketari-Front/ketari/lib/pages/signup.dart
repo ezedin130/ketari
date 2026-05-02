@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ketari/controllers/authController.dart';
 import 'package:ketari/main_screen.dart';
@@ -44,11 +43,9 @@ class Signup extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  'Welcome To Ketari\n'
                   ' Signup ',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.getFont(
-                    'Inter',
+                  style: GoogleFonts.lato(
                     fontSize: size.width * 0.07,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
