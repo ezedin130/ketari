@@ -15,3 +15,9 @@ parsed_postman.txt
 # OS metadata
 .DS_Store
 Thumbs.db
+
+# Postman
+postman/
+.postman/
+**/postman/
+**/.postman/

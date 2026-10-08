@@ -38,3 +38,7 @@ uploads/
 *.class
 .DS_Store
 
+# Postman
+postman/
+.postman/
+
