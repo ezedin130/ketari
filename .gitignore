@@ -1,0 +1,17 @@
+# IDE configuration
+.vscode/
+.idea/
+
+# Archives and build artifacts
+*.zip
+*.tar.gz
+
+# Scratch, temporary and external files
+Amoudi_Financial_Management_System.docx
+dtos_summary.txt
+parsed_backend.txt
+parsed_postman.txt
+
+# OS metadata
+.DS_Store
+Thumbs.db
